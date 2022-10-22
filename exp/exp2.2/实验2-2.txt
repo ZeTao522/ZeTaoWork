@@ -1,0 +1,38 @@
+交换机S1配置
+undo terminal monitor
+sys
+sysname S1
+vlan batch 10 20
+interface gigabitethernet 0/0/1
+port link-type access
+port default vlan 10
+quit
+interface gigabitethernet 0/0/2
+port link-type access
+port default vlan 20
+quit
+
+对vlan进行确认
+display vlan 10 verbose
+display vlan 20 verbose
+
+display port vlan
+
+配置VLANIF端口
+interface vlanif 10
+ip address 192.168.100.1 24
+quit
+interface vlanif 20
+ip address 192.168.200.1 24
+quit
+
+对vlanif进行确认
+display ip interface brief vlanif 10
+display ip interface brief vlanif 20
+
+quit
+save
+Y
+
+配置PC1的ip为192.168.100.11/24和缺省网关192.168.100.1/24
+配置PC2的ip为192.168.200.11/24和缺省网关192.168.200.1/24
