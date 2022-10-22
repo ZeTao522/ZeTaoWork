@@ -1,0 +1,101 @@
+交换机S1配置
+system-view
+vlan 10
+quit
+vlan 20
+quit
+vlan 30
+quit
+interface Ethernet 0/0/1
+port link-type trunk
+port trunk allow-pass vlan 10 20 30
+quit
+interface Ethernet 0/0/2
+port link-type trunk
+port trunk allow-pass vlan 10 20 30
+quit
+interface Ethernet 0/0/3
+port link-type trunk
+port trunk allow-pass vlan 10 20 30
+quit
+display port vlan
+quit
+save
+Y
+
+交换机S2配置
+system-view
+vlan 10
+quit
+vlan 20
+quit
+vlan 30
+quit
+interface Ethernet 0/0/1
+port link-type trunk
+port trunk allow-pass vlan 10 20 30
+quit
+interface Ethernet 0/0/2
+port link-type access
+port default vlan 10
+quit
+interface Ethernet 0/0/3
+port link-type access
+port default vlan 20
+quit
+display port vlan
+quit
+save
+Y
+
+交换机S3配置
+system-view
+vlan 10
+quit
+vlan 20
+quit
+vlan 30
+quit
+interface Ethernet 0/0/1
+port link-type trunk
+port trunk allow-pass vlan 10 20 30
+quit
+interface Ethernet 0/0/2
+port link-type access
+port default vlan 10
+quit
+interface Ethernet 0/0/3
+port link-type access
+port default vlan 20
+quit
+display port vlan
+quit
+save
+Y
+
+交换机S4配置
+system-view
+vlan 10
+quit
+vlan 20
+quit
+vlan 30
+quit
+interface Ethernet 0/0/1
+port link-type trunk
+port trunk allow-pass vlan 10 20 30
+quit
+interface Ethernet 0/0/2
+port link-type access
+port default vlan 20
+quit
+interface Ethernet 0/0/3
+port link-type access
+port default vlan 30
+quit
+display port vlan
+quit
+save
+Y
+
+
