@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="07f7af67-dcab-4a29-8a7a-61c7d913a891" name="本地挂载" url="http://localhost:8080/yii-basic-app-2.0.46">
+        <fileTransfer mountedRoot="D:\DevelopmentTool\phpstudy_pro\WWW" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
